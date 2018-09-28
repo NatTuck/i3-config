@@ -1,0 +1,7 @@
+#export XKBOPTIONS="ctrl:nocaps"
+setxkbmap -option ctrl:nocaps
+xscreensaver &
+feh --bg-scale /home/nat/Pictures/wallpaper/katla-822_2560x1440.jpg &
+seafile-applet &
+
+
