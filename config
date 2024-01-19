@@ -31,6 +31,7 @@ font pango:DejaVu Sans Mono 14
 
 #exec xscreensaver -no-splash
 #bindsym $mod+Home exec xscreensaver-command -lock
+#   nix-env -iA nixpkgs.xidlehook
 exec /home/nat/.nix-profile/bin/xidlehook \
   --not-when-fullscreen \
   --not-when-audio \
@@ -41,7 +42,8 @@ bindsym $mod+Home exec "i3lock -c 000000; sleep 1; xset dpms force off"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#   kitty installed manually
+bindsym $mod+Return exec "/home/nat/.local/kitty.app/bin/kitty || i3-sensible-terminal"
 
 # kill focused window
 bindsym $mod+Shift+q kill
