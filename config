@@ -9,6 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+assign [class="^Steam"] 7
+
 #set $mod Mod1
 set $mod Mod4
 
@@ -18,7 +20,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 12
+font pango:DejaVu Sans Mono 14
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -27,15 +29,21 @@ font pango:DejaVu Sans Mono 12
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-exec xscreensaver
-bindsym $mod+Home exec i3lock -c 000000
-
+#exec xscreensaver -no-splash
+#bindsym $mod+Home exec xscreensaver-command -lock
+#   nix-env -iA nixpkgs.xidlehook
+exec /home/nat/.nix-profile/bin/xidlehook \
+  --not-when-fullscreen \
+  --not-when-audio \
+  --timer 3600 'xset dpms force off'
+bindsym $mod+Home exec "i3lock -c 000000; sleep 1; xset dpms force off"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#   kitty installed manually
+bindsym $mod+Return exec "/home/nat/.local/kitty.app/bin/kitty || i3-sensible-terminal"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -160,4 +168,9 @@ bar {
         status_command i3status
 }
 
+<<<<<<< HEAD
+=======
+exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
+
+>>>>>>> dddd7766230da30d513412038bf173159440d57b
 for_window [class="java-lang-Thread"] floating enable
