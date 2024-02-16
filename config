@@ -28,7 +28,7 @@ font pango:DejaVu Sans Mono 12
 # font, it doesn’t scale on retina/hidpi displays.
 
 exec xscreensaver
-bindsym $mod+Home exec xscreensaver-command -lock
+bindsym $mod+Home exec i3lock -c 000000
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -160,3 +160,4 @@ bar {
         status_command i3status
 }
 
+for_window [class="java-lang-Thread"] floating enable
