@@ -168,6 +168,9 @@ bar {
         status_command i3status
 }
 
+<<<<<<< HEAD
+=======
 exec --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 
+>>>>>>> dddd7766230da30d513412038bf173159440d57b
 for_window [class="java-lang-Thread"] floating enable
