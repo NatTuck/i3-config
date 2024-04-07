@@ -43,7 +43,7 @@ floating_modifier $mod
 
 # start a terminal
 #   kitty installed manually
-bindsym $mod+Return exec "/home/nat/.local/kitty.app/bin/kitty || i3-sensible-terminal"
+bindsym $mod+Return exec "alacritty || i3-sensible-terminal"
 
 # kill focused window
 bindsym $mod+Shift+q kill
